@@ -1,5 +1,7 @@
 
 
+
+import { Web3Provider } from "@components/providers";
 import { Navbar, Footer } from "@components/ui/shared";
 import { Poppins, Changa_One } from "next/font/google";
 
@@ -23,7 +25,7 @@ const changa_One = Changa_One({
 
 export default function BaseLayout({ children }) {
   return (
-    <>
+    <Web3Provider>
       <div
         className={` ${poppins.variable} font-poppins ${changa_One.variable} relative max-w-7xl mx-auto px-5 bg-grey h-auto `}
       >
@@ -31,7 +33,7 @@ export default function BaseLayout({ children }) {
         <div className="fit">{children}</div>
         <Footer />
       </div>
-    </>
+    </Web3Provider>
   );
 }
  

@@ -12,9 +12,11 @@ export default function Marketplace() {
 
   return (
     <>
-      <Header />
-      <BreadCrumbs/>
-      <Cards />
+      <div className="min-h-screen">
+        <Header />
+        {/* <BreadCrumbs/> */}
+        <Cards />
+      </div>
 
     </>
   )

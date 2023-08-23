@@ -1,3 +1,5 @@
+import { Button } from "@components/ui/shared";
+import Link from "next/link";
 
 
 
@@ -28,9 +30,11 @@ export default function Hero() {
         </div>
 
         <div className="flex justify-end my-1">
-          <button className="text-white text-lg bg-indigo rounded-[5px] py-3 px-8 ">
-            Explore
-          </button>
+          <Link href="/marketplace" >
+            <Button>
+              Explore
+            </Button>
+          </Link>
         </div>
       </div>
 
