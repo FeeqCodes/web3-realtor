@@ -8,7 +8,7 @@ const SIZE = {
 
 
 
-export default function Button({children, className, size="md", variant="indigo"}) {
+export default function Button({children, className, size="md", variant="indigo", ...rest}) {
 
   const sizeClass = SIZE[size]
 
@@ -20,7 +20,9 @@ export default function Button({children, className, size="md", variant="indigo"
 
   return (
     <>
-      <button className={`text-white text-lg  rounded-[5px] ${sizeClass} ${variants[variant]}  ${className}`}>
+      <button 
+        {...rest}
+        className={`text-white text-sm rounded-[20px] ${sizeClass} ${variants[variant]}  ${className}`}>
         {children}
       </button>
     </>

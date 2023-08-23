@@ -1,20 +1,20 @@
+
 import { useWeb3 } from "@components/providers/web3";
 import Button from "../button";
-
-
-
+import { useAccount } from "@components/hooksUsage/web3";
 
 
 export default function Navbar() {
-  const {connect, isLoading} = useWeb3()
-  
+  const { connect, isLoading, requireInstall } = useWeb3()
+  const { account } = useAccount()
+
   return (
     <>
       <div className="m-auto bg-white w-full  py-6  ">
         <nav className=" flex items-center justify-between w-[90%] m-auto">
           <div className="text-xl  font-black">Realtor</div>
           <ul
-            className={` font-changa flex flex-shrink gap-x-24 text-myTextLight text-base font-normal `}
+            className={` font-changa flex flex-shrink gap-x-24 text-myTextLight text-base font-semibold `}
           >
             <li>
               <a href="">Home</a>
@@ -30,22 +30,29 @@ export default function Navbar() {
             </li>
           </ul>
 
-          { isLoading ? (
-            <Button
-              onClick={connect}
-              className="text-white text-sm bg-indigo rounded-[20px] py-3 px-6"
-            >
-              Loading..
-            </Button>
+          { isLoading ?
+            <Button 
+              disabled={true}
+              onClick={connect}>
+             Loading...
+            </Button> :
 
-          ) : (
+            account.data ?
+            <Button onClick={connect} className="">
+              Hi There
+            </Button> :
+
+            requireInstall ?
             <Button
-              onClick={connect}
-              className="text-white text-sm bg-indigo rounded-[20px] py-3 px-6"
-            >
-              Connect wallet
-            </Button>
-          )}
+              onClick={() => window.open("https://metamask.io/download.html", "_blank")}>Install Metamask
+            </Button> :
+
+            <Button
+              onClick={connect}>
+              Connect
+            </Button> 
+
+          }
           
         </nav>
       </div>

@@ -14,7 +14,7 @@ module.exports = {
         myTextLight: "rgba(51, 46, 66, 0.69)",
         myText: "rgba(51, 46, 66, 1)",
         indigo: "#483B70",
-        indigoLight: "#7958e0",
+        indigoLight: "#8b82a8",
         grey: "#D9D9D9",
         inShadow: "#E04040D9",
         inShadow2: " rgba(0, 0, 0, 0.25)",
