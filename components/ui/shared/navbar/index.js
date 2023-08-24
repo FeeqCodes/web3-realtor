@@ -1,5 +1,5 @@
 
-import { useWeb3 } from "@components/providers/web3";
+import { useWeb3 } from "@components/providers";
 import Button from "../button";
 import { useAccount } from "@components/hooksUsage/web3";
 
@@ -7,6 +7,7 @@ import { useAccount } from "@components/hooksUsage/web3";
 export default function Navbar() {
   const { connect, isLoading, requireInstall } = useWeb3()
   const { account } = useAccount()
+
 
   return (
     <>

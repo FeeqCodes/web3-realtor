@@ -22,7 +22,7 @@ export default function Web3Provider({ children }) {
     provider: null,
     web3: null,
     contract: null,
-    isLoading: true,
+    providerIsLoading: true,
   });
 
 
@@ -38,12 +38,11 @@ export default function Web3Provider({ children }) {
           provider,
           web3,
           contract: null,
-          isLoading: false,
-
+          providerIsLoading: false,
         });
 
       } else {
-        setWeb3Api((api) => ({ ...api, isLoading: false }));
+        setWeb3Api((api) => ({ ...api, providerIsLoading: false }));
         console.error("Please, install Metamask.");
       }
     };
@@ -57,11 +56,11 @@ export default function Web3Provider({ children }) {
   // main usage of abstractions
   const _web3Api = useMemo(() => {
 
-    const {web3, provider, isLoading} = web3Api
+    const {web3, provider, providerIsLoading} = web3Api
     
     return {
       ...web3Api,
-      requireInstall: !isLoading && !web3,
+      requireInstall: !providerIsLoading && !web3,
       hooks: setupHooks({ web3, provider }),
 
       connect: web3Api.provider

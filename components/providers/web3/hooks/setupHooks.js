@@ -2,7 +2,7 @@
 
 
 import { handler as createAccountHook } from "./useAccount";
-
+import { handler as createNetworkHook } from "./useNetwork"
 
 
 
@@ -10,6 +10,8 @@ import { handler as createAccountHook } from "./useAccount";
 
 export const setupHooks = ({ web3, provider}) => {
   return {
-    useAccount: createAccountHook(web3, provider)
+    useAccount: createAccountHook(web3, provider),
+    useNetwork: createNetworkHook(web3, provider),
   }
 }
+

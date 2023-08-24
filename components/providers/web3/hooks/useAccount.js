@@ -22,10 +22,17 @@ export const handler = (web3, provider) => ()=> {
         throw new Error("Cannot Retrieve any Account, Please refresh Browser")
       }
 
-      console.log(accounts)
+      console.log(account)
       return account;
     }
   )
 
+
+
+  return {
+    data,
+    mutate,
+    ...rest
+  }
 
 }
