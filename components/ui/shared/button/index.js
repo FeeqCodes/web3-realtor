@@ -3,7 +3,8 @@
 const SIZE = {
 
   sm: "py-2 px-4",
-  md: " py-3 px-8"
+  md: "py-3 px-8",
+  lg: "py-4 px-12 rounded-[10px]"
 }
 
 

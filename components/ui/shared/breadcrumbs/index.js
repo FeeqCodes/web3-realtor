@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 
@@ -18,7 +19,7 @@ const LINKS = [
   },
 ]
 
-console.log(LINKS.href)
+// console.log(LINKS.href)
 
 
 export default function BreadCrumbs({items}) {
@@ -36,9 +37,13 @@ export default function BreadCrumbs({items}) {
         >
           {LINKS.map((item, index) => (
             <React.Fragment key={item.href}>
-              <li>
-                <a>{item.value}</a>
-              </li>
+              <Link
+                className="hover:text-black"
+                 href={item.href}>
+                <li>
+                  <a>{item.value}</a>
+                </li>
+              </Link>
             </React.Fragment>
           ))}
         </ol>

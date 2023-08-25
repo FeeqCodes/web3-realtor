@@ -7,3 +7,5 @@ export { default as OwnedHouseCard} from "./cards/OwnedHouseCard"
 
 export {default as HouseHero} from "./househero"
 export {default as Features} from "./features"
+
+export { default as HouseList } from "./list"

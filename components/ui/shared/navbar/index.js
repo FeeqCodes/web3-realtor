@@ -15,7 +15,7 @@ export default function Navbar() {
         <nav className=" flex items-center justify-between w-[90%] m-auto">
           <div className="text-xl  font-black">Realtor</div>
           <ul
-            className={` font-changa flex flex-shrink gap-x-24 text-myTextLight text-base font-semibold `}
+            className={` font-changa flex flex-shrink gap-x-24 text-myTextLight text-base `}
           >
             <li>
               <a href="">Home</a>
